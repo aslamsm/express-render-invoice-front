@@ -346,6 +346,7 @@ function App() {
         >
           <Routes>
             <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/users" element={<UserList2 />} />
             <Route path="/users/:id" element={<UserDetails />} />
