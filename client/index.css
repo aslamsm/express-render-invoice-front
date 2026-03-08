@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --erp-primary: #4f46e5;      /* Indigo 600 */
+  --erp-primary-hover: #4338ca;/* Indigo 700 */
+  --erp-secondary: #0ea5e9;    /* Sky 500 */
+  --erp-bg: #f8fafc;           /* Slate 50 */
+  --erp-surface: #ffffff;      
+  --erp-border: #e2e8f0;       /* Slate 200 */
+  --erp-text-main: #0f172a;    /* Slate 900 */
+  --erp-text-muted: #64748b;   /* Slate 500 */
+  --erp-input-bg: #f8fafc;
+  --erp-input-border: #cbd5e1; /* Slate 300 */
+  --erp-input-focus: #818cf8;  /* Indigo 400 */
+  --erp-danger: #ef4444;       
+  --erp-radius: 8px;
+  --erp-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --erp-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--erp-bg);
+  color: var(--erp-text-main);
+}
+
+/* ERP Form Layouts */
+.erp-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.erp-page-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--erp-text-main);
+  margin: 0;
+}
+
+/* ERP Form Card */
+.erp-card {
+  background-color: var(--erp-surface);
+  border: 1px solid var(--erp-border);
+  border-radius: var(--erp-radius);
+  box-shadow: var(--erp-shadow-sm);
+  overflow: hidden;
+}
+.erp-card-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--erp-border);
+  background-color: rgba(248, 250, 252, 0.5);
+}
+.erp-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--erp-text-main);
+  margin: 0;
+}
+.erp-card-body {
+  padding: 24px;
+}
+
+/* ERP Form Controls */
+.erp-form-group {
+  margin-bottom: 20px;
+}
+.erp-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--erp-text-main);
+  margin-bottom: 6px;
+}
+.erp-form-label .required {
+  color: var(--erp-danger);
+  margin-left: 2px;
+}
+.erp-input {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--erp-text-main);
+  background-color: var(--erp-input-bg);
+  border: 1px solid var(--erp-input-border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s;
+}
+.erp-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--erp-input-focus);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+}
+.erp-input::placeholder {
+  color: var(--erp-text-muted);
+}
+textarea.erp-input {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Button overrides for standard bootstrap matching ERP style */
+.btn-erp-primary {
+  background-color: var(--erp-primary);
+  border-color: var(--erp-primary);
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  box-shadow: var(--erp-shadow-sm);
+}
+.btn-erp-primary:hover {
+  background-color: var(--erp-primary-hover);
+  border-color: var(--erp-primary-hover);
+}
+.btn-erp-secondary {
+  background-color: white;
+  border: 1px solid var(--erp-border);
+  color: var(--erp-text-main);
+  font-weight: 500;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  box-shadow: var(--erp-shadow-sm);
+}
+.btn-erp-secondary:hover {
+  background-color: var(--erp-bg);
+  border-color: var(--erp-input-border);
+}
+
+.erp-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--erp-border);
+}

@@ -123,7 +123,7 @@ function CreateInvoice() {
   const fetchNextInvoiceNumber = async () => {
     setInvoiceNumberLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/invoices/next-number");
+      const res = await fetch("http://localhost:3000/invoices/next-number");
       if (res.ok) {
         const d = await res.json();
         if (d.nextNumber) {
@@ -136,7 +136,7 @@ function CreateInvoice() {
           setInvoiceNumber(formatInvoiceNumber(1));
         }
       } else {
-        const r2 = await fetch("http://localhost:5000/invoices");
+        const r2 = await fetch("http://localhost:3000/invoices");
         const d2 = await r2.json();
         setInvoiceNumber(formatInvoiceNumber((d2.data || d2 || []).length + 1));
       }
@@ -154,13 +154,13 @@ function CreateInvoice() {
   };
 
   const fetchCustomers = async () => {
-    const res = await fetch("http://localhost:5000/customers");
+    const res = await fetch("http://localhost:3000/customers");
     const data = await res.json();
     setCustomers(data.data);
   };
 
   const fetchItems = async () => {
-    const res = await fetch("http://localhost:5000/items");
+    const res = await fetch("http://localhost:3000/items");
     const data = await res.json();
     setItems(data.data || data);
   };
@@ -413,7 +413,7 @@ function CreateInvoice() {
       roundingDiff,
       total: grandTotal,
     };
-    const res = await fetch("http://localhost:5000/invoices", {
+    const res = await fetch("http://localhost:3000/invoices", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

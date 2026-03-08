@@ -21,6 +21,8 @@ import CourseEdit from "./Components/CourseEdit";
 //import CustomerList from "./Components/CustomerList";
 import CreateInvoice from "./Components/CreateInvoice";
 import InvoiceList from "./Components/InvoiceList";
+import CreateItem from "./Components/CreateItem";
+import CreateCustomer from "./Components/CreateCustomer";
 
 type NavSection = {
   label: string;
@@ -42,6 +44,7 @@ const NAV_SECTIONS: NavSection[] = [
     key: "sales",
     children: [
       { label: "Customers", icon: "🏢", to: "/customers" },
+      { label: "New Customer", icon: "➕", to: "/create-customer" },
       { label: "Invoices", icon: "🧾", to: "/invoices" },
       { label: "New Invoice", icon: "➕", to: "/create-invoice" },
       { label: "Recurring Invoices", icon: "🔄", to: "/recurring-invoices" },
@@ -68,6 +71,7 @@ const NAV_SECTIONS: NavSection[] = [
     key: "inventory",
     children: [
       { label: "Items", icon: "📦", to: "/items" },
+      { label: "New Item", icon: "➕", to: "/create-item" },
       { label: "Price Lists", icon: "🏷️", to: "/price-lists" },
     ],
   },
@@ -358,8 +362,10 @@ function App() {
             <Route path="/courses/edit/:id" element={<CourseEdit />} />
             <Route path="/register" element={<RegisterUser />} />
             {/* <Route path="/customers" element={<CustomerList />} />  */}
+            <Route path="/create-customer" element={<CreateCustomer />} />
             <Route path="/create-invoice" element={<CreateInvoice />} />
             <Route path="/invoices" element={<InvoiceList />} />
+            <Route path="/create-item" element={<CreateItem />} />
           </Routes>
         </main>
       </div>
