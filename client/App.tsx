@@ -18,11 +18,12 @@ import CourseList4 from "./Components/CourseList4";
 import CourseAdd from "./Components/CourseAdd";
 import RegisterUser from "./Components/RegisterUser";
 import CourseEdit from "./Components/CourseEdit";
-//import CustomerList from "./Components/CustomerList";
 import CreateInvoice from "./Components/CreateInvoice";
 import InvoiceList from "./Components/InvoiceList";
 import CreateItem from "./Components/CreateItem";
 import CreateCustomer from "./Components/CreateCustomer";
+import CustomerList from "./Components/CustomerList";
+import EditCustomer from "./Components/EditCustomer";
 
 type NavSection = {
   label: string;
@@ -361,8 +362,14 @@ function App() {
             <Route path="/courses/add" element={<CourseAdd />} />
             <Route path="/courses/edit/:id" element={<CourseEdit />} />
             <Route path="/register" element={<RegisterUser />} />
-            <Route path="/customers" element={<CustomerList />} />  
+
+            {/* ── Customer Routes ── */}
+            <Route path="/customers" element={<CustomerList />} />
             <Route path="/create-customer" element={<CreateCustomer />} />
+            <Route path="/customers/new" element={<CreateCustomer />} />
+            <Route path="/customers/:id/edit" element={<EditCustomer />} />
+
+            {/* ── Invoice / Item Routes ── */}
             <Route path="/create-invoice" element={<CreateInvoice />} />
             <Route path="/invoices" element={<InvoiceList />} />
             <Route path="/create-item" element={<CreateItem />} />

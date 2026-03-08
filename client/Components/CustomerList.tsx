@@ -427,7 +427,7 @@ const CustomerList = () => {
           </button>
           <button
             className="btn btn-primary"
-            onClick={() => navigate("/customers/new")}
+            onClick={() => navigate("/create-customer")}
           >
             + New Customer
           </button>
