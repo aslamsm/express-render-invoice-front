@@ -7,17 +7,6 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home";
-import Contact from "./Components/Contact";
-import UserList2 from "./Components/UserList2";
-import UserDetails from "./Components/UserDetails";
-import EmployeeList from "./Components/EmployeeList";
-import Counter from "./Components/Counter";
-import PostList3 from "./Components/PostList3";
-import RecipeList from "./Components/RecipeList";
-import CourseList4 from "./Components/CourseList4";
-import CourseAdd from "./Components/CourseAdd";
-import RegisterUser from "./Components/RegisterUser";
-import CourseEdit from "./Components/CourseEdit";
 import CreateInvoice from "./Components/CreateInvoice";
 import InvoiceList from "./Components/InvoiceList";
 import CreateItem from "./Components/CreateItem";
@@ -351,17 +340,6 @@ function App() {
         >
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/users" element={<UserList2 />} />
-            <Route path="/users/:id" element={<UserDetails />} />
-            <Route path="/employees" element={<EmployeeList />} />
-            <Route path="/counter" element={<Counter />} />
-            <Route path="/posts" element={<PostList3 />} />
-            <Route path="/recipes" element={<RecipeList />} />
-            <Route path="/courses" element={<CourseList4 />} />
-            <Route path="/courses/add" element={<CourseAdd />} />
-            <Route path="/courses/edit/:id" element={<CourseEdit />} />
-            <Route path="/register" element={<RegisterUser />} />
 
             {/* ── Customer Routes ── */}
             <Route path="/customers" element={<CustomerList />} />
