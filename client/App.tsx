@@ -361,7 +361,7 @@ function App() {
             <Route path="/courses/add" element={<CourseAdd />} />
             <Route path="/courses/edit/:id" element={<CourseEdit />} />
             <Route path="/register" element={<RegisterUser />} />
-            {/* <Route path="/customers" element={<CustomerList />} />  */}
+            <Route path="/customers" element={<CustomerList />} />  
             <Route path="/create-customer" element={<CreateCustomer />} />
             <Route path="/create-invoice" element={<CreateInvoice />} />
             <Route path="/invoices" element={<InvoiceList />} />
