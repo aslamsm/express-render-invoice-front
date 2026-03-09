@@ -4,6 +4,7 @@ import {
   NavLink,
   Route,
   Routes,
+  Navigate,
 } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home";
@@ -339,6 +340,7 @@ function App() {
             .join(" ")}
         >
           <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
 
             {/* ── Customer Routes ── */}
