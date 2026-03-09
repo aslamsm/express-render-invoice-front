@@ -155,10 +155,11 @@ export default function InvoiceList() {
 
   // ── Fetch ─────────────────────────────────────────────────────────────────
   useEffect(() => {
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
     Promise.all([
-      fetch("http://localhost:3000/invoices").then((r) => r.json()),
-      fetch("http://localhost:3000/customers").then((r) => r.json()),
-      fetch("http://localhost:3000/items").then((r) => r.json()),
+      fetch(`${API_BASE}/invoices`).then((r) => r.json()),
+      fetch(`${API_BASE}/customers`).then((r) => r.json()),
+      fetch(`${API_BASE}/items`).then((r) => r.json()),
     ])
       .then(([invData, custData, itemData]) => {
         setInvoices(invData.data || invData || []);
@@ -404,7 +405,8 @@ export default function InvoiceList() {
       total: editGrandTotal,
     };
     try {
-      const res = await fetch(`http://localhost:3000/invoices/${editInv._id}`, {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const res = await fetch(`${API_BASE}/invoices/${editInv._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -432,7 +434,8 @@ export default function InvoiceList() {
     if (!editInv) return;
     setSaving(true);
     try {
-      const res = await fetch(`http://localhost:3000/invoices/${editInv._id}`, {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL;
+      const res = await fetch(`${API_BASE}/invoices/${editInv._id}`, {
         method: "DELETE",
       });
       if (res.ok) {

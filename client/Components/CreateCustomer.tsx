@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:3000/customers";
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/customers`;
 
 type PaymentMethod = "card" | "upi" | "wallet" | "netbanking";
 type Gender = "male" | "female" | "other" | "prefer_not_to_say";
